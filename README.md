@@ -1,16 +1,62 @@
-# isar_database_web
+# Isar Database For Flutter Web
 
-A new Flutter project.
+This Flutter web app demonstrates how to perform CRUD (Create, Read, Update, Delete) operations using the Isar database. Isar is a high-performance local database designed for Flutter and Dart applications.
+
+## Feature
+
+- Add new records to the database
+- Retrieve and display records
+- Update existing records
+- Delete records
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Add below dependency in pubspec.yaml
 
-A few resources to get you started if this is your first Flutter project:
+```
+dependencies:
+  isar: ^4.0.0-dev.14
+  isar_flutter_libs: ^4.0.0-dev.14
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+dev_dependencies:
+  flutter_test:
+    sdk: flutter 
+  build_runner: any
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Initialization
+
+```
+      await Isar.initialize();
+      isar = Isar.open(
+        schemas: [EmployeeSchema],
+        directory: Isar.sqliteInMemory,
+        engine: IsarEngine.sqlite,
+      );
+```
+
+## Add/Update Data
+
+```
+       isar!.write((isar) {
+        isar.employees.put(data);
+      });
+```
+
+## Delete Data
+
+```
+       isar!.write((isar) {
+        isar.employees.delete(data.id);
+      });
+```
+
+## Fetch Data
+
+```
+        isar!.employees.where().findAll();
+```
+
+## Video
+
+https://github.com/ProdevSoftware/isar_database_web/assets/97152083/a42d62fb-e0be-4c80-b8ad-bdbc5abe774b
