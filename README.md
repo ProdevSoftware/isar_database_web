@@ -11,6 +11,7 @@ This Flutter web app demonstrates how to perform CRUD (Create, Read, Update, Del
 
 ## Getting Started
 
+## 1. Dependencies
 Add below dependency in pubspec.yaml
 
 ```
@@ -23,8 +24,8 @@ dev_dependencies:
     sdk: flutter 
   build_runner: any
 ```
-
-## Initialization
+## 2. Code SetUp
+- Initialization
 
 ```
       await Isar.initialize();
@@ -35,7 +36,7 @@ dev_dependencies:
       );
 ```
 
-## Add/Update Data
+- Add/Update Data
 
 ```
        isar!.write((isar) {
@@ -43,7 +44,7 @@ dev_dependencies:
       });
 ```
 
-## Delete Data
+- Delete Data
 
 ```
        isar!.write((isar) {
@@ -51,12 +52,12 @@ dev_dependencies:
       });
 ```
 
-## Fetch Data
+- Fetch Data
 
 ```
         isar!.employees.where().findAll();
 ```
 
-## Video
+## 3. Video
 
 https://github.com/ProdevSoftware/isar_database_web/assets/97152083/a42d62fb-e0be-4c80-b8ad-bdbc5abe774b
